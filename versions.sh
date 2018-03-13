@@ -7,10 +7,14 @@ do
         do
             for sd in no yes
             do
-                ev=$([[ $e == "ce" ]] && echo "-ce" || echo "" )
-                sv=$([[ $s == "git" ]] && echo "-git" || echo "" )
-                sdv=$([[ $sd == "yes" ]] && echo "-sd" || echo "" )
-                echo "$v$ev$sv$sdv"
+                for b2b in no yes
+                do
+                    ev=$([[ $e == "ce" ]] && echo "-ce" || echo "" )
+                    sv=$([[ $s == "git" ]] && echo "-git" || echo "" )
+                    sdv=$([[ $sd == "yes" ]] && echo "-sd" || echo "" )
+                    b2bv=$([[ $b2b == "yes" ]] && echo "-b2b" || echo "" )
+                    echo "$v$ev$sv$sdv$b2bv"
+                done
             done
         done
     done
